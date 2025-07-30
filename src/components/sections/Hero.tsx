@@ -36,7 +36,7 @@ export default function Hero() {
             className="mb-6"
           >
                     <Badge className="bg-blue-600/20 text-blue-300 border border-blue-400/30 px-6 py-2 text-sm font-medium rounded-md backdrop-blur-sm">
-          글로벌 네트워크로 세계를 연결하는 K-뷰티 전문기업
+          글로벌 네트워크로 세계를 연결하는 최고의 수출 기업
         </Badge>
           </motion.div>
 
@@ -89,14 +89,14 @@ export default function Hero() {
           >
                             <Button
           size="lg"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 text-lg rounded-lg shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-150 hover:scale-105"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-10 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
         >
           사업 제휴 문의
         </Button>
         <Button
           size="lg"
           variant="outline"
-          className="border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg rounded-lg backdrop-blur-sm transition-all duration-150"
+          className="border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-10 py-4 text-lg rounded-xl backdrop-blur-sm transition-all duration-200 font-medium"
         >
           회사 소개서 다운로드
         </Button>

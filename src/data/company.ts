@@ -13,28 +13,28 @@ export const businessAreas = [
     id: 'k-beauty',
     title: 'K-뷰티 수출',
     description: '화장품 브랜드 글로벌 진출 지원',
-    icon: '',
+    icon: '💄',
     details: '한국 화장품의 세계화를 선도하며, 다양한 K-뷰티 브랜드의 해외 진출을 전문적으로 지원합니다.'
   },
   {
     id: 'fashion',
     title: '패션/잡화',
     description: '악세사리, 가방, 의류 등 종합 유통',
-    icon: '',
+    icon: '👜',
     details: '트렌디한 패션 아이템부터 실용적인 잡화까지, 폭넓은 상품 라인업으로 고객의 다양한 니즈를 충족합니다.'
   },
   {
     id: 'luxury',
     title: '명품 유통',
     description: '디올, 샤넬 등 럭셔리 브랜드 취급',
-    icon: '',
+    icon: '💎',
     details: '세계적인 명품 브랜드와의 파트너십을 통해 프리미엄 제품의 안정적인 공급과 유통을 담당합니다.'
   },
   {
     id: 'live-commerce',
     title: '라이브커머스',
     description: '실시간 방송을 통한 글로벌 판매',
-    icon: '',
+    icon: '📺',
     details: '혁신적인 라이브커머스 플랫폼을 통해 실시간으로 고객과 소통하며 글로벌 시장에 진출합니다.'
   }
 ];

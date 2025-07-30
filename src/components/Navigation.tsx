@@ -57,7 +57,7 @@ export default function Navigation() {
             }
           }, 100);
           
-        } catch (error) {
+        } catch {
           // Method 3: Basic fallback
           window.scrollTo(0, offsetPosition);
         }

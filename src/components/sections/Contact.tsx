@@ -11,28 +11,28 @@ const contactOptions = [
   {
     title: '사업 제휴 문의',
     description: '새로운 브랜드 입점 및 파트너십',
-    icon: '',
+    icon: '🤝',
     action: '제휴 문의하기',
     priority: 'high'
   },
   {
     title: '글로벌 수출 상담',
     description: '해외 진출 및 라이브커머스 상담',
-    icon: '',
+    icon: '🌍',
     action: '수출 상담하기',
     priority: 'high'
   },
   {
     title: '물류/유통 서비스',
     description: '물류 대행 및 유통망 연결',
-    icon: '',
+    icon: '📦',
     action: '물류 문의하기',
     priority: 'medium'
   },
   {
     title: '라이브커머스 진행',
     description: '실시간 방송 판매 서비스',
-    icon: '',
+    icon: '📹',
     action: '방송 문의하기',
     priority: 'medium'
   }
