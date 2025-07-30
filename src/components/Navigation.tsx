@@ -23,21 +23,45 @@ export default function Navigation() {
   };
 
   const handleNavClick = (href: string) => {
-    closeMobileMenu();
-    
     // Remove the # from href to get the target id
     const targetId = href.replace('#', '');
     const targetElement = document.getElementById(targetId);
     
+    // Close mobile menu first
+    closeMobileMenu();
+    
     if (targetElement) {
-      const navHeight = 64; // h-16 = 64px
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+      // Wait for mobile menu animation to complete
+      setTimeout(() => {
+        const navHeight = 64; // h-16 = 64px
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        const offsetPosition = elementPosition + currentScrollY - navHeight;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        // Try multiple scroll methods for better mobile compatibility
+        try {
+          // Method 1: Standard scrollTo
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Method 2: Fallback for mobile browsers
+          setTimeout(() => {
+            const newPosition = targetElement.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - navHeight;
+            if (Math.abs(window.scrollY - offsetPosition) > 50) {
+              window.scrollTo({
+                top: newPosition,
+                behavior: 'smooth'
+              });
+            }
+          }, 100);
+          
+        } catch (error) {
+          // Method 3: Basic fallback
+          window.scrollTo(0, offsetPosition);
+        }
+      }, 300); // Wait for menu close animation
     }
   };
 
