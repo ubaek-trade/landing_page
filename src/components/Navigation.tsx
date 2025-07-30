@@ -22,6 +22,25 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleNavClick = (href: string) => {
+    closeMobileMenu();
+    
+    // Remove the # from href to get the target id
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const navHeight = 64; // h-16 = 64px
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <motion.nav 
       initial={{ opacity: 0, y: -20 }}
@@ -45,13 +64,13 @@ export default function Navigation() {
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className="text-slate-600 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </div>
 
@@ -59,6 +78,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <Button 
               size="sm"
+              onClick={() => handleNavClick('#contact')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-6"
             >
               문의하기
@@ -100,17 +120,16 @@ export default function Navigation() {
             >
               <div className="px-4 py-6 space-y-4">
                 {navItems.map((item, index) => (
-                  <motion.a
+                  <motion.button
                     key={item.name}
-                    href={item.href}
-                    onClick={closeMobileMenu}
+                    onClick={() => handleNavClick(item.href)}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="block text-slate-600 hover:text-blue-600 font-medium text-lg py-2 transition-colors duration-200"
+                    className="block w-full text-left text-slate-600 hover:text-blue-600 font-medium text-lg py-2 transition-colors duration-200"
                   >
                     {item.name}
-                  </motion.a>
+                  </motion.button>
                 ))}
                 
                 <motion.div
@@ -120,7 +139,7 @@ export default function Navigation() {
                   className="pt-4 border-t border-slate-200"
                 >
                   <Button 
-                    onClick={closeMobileMenu}
+                    onClick={() => handleNavClick('#contact')}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                   >
                     문의하기
