@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
+
 import { contactInfo, companyInfo } from '@/data/company';
 
 const contactOptions = [
@@ -247,7 +247,7 @@ export default function Contact() {
           className="text-center mt-16 pt-8 border-t border-white/20"
         >
           <p className="text-blue-200 mb-4">
-            "K-뷰티를 세계로, 라이브로 연결하다"
+            &quot;K-뷰티를 세계로, 라이브로 연결하다&quot;
           </p>
           <p className="text-sm text-blue-300">
             © 2024 {companyInfo.name}. All rights reserved.
