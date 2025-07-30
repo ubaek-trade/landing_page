@@ -250,7 +250,7 @@ export default function Contact() {
             &quot;K-뷰티를 세계로, 라이브로 연결하다&quot;
           </p>
           <p className="text-sm text-blue-300">
-            © 2024 {companyInfo.name}. All rights reserved.
+            © 2025 {companyInfo.name}. All rights reserved.
           </p>
         </motion.div>
       </div>
