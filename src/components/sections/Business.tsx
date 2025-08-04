@@ -45,7 +45,7 @@ export default function Business() {
         </h2>
                   <p className="text-lg text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
           대형 제조사 직접 파트너십부터 대률간 물류 네트워크까지,
-          <span className="text-blue-600 font-semibold"> 수십년 경력의 종합 수출무역 전문 서비스</span>를 제공합니다
+          <span className="text-blue-600 font-semibold"> +10년 경력의 종합 수출무역 전문 서비스</span>를 제공합니다
         </p>
         </motion.div>
 
@@ -155,7 +155,7 @@ export default function Business() {
             <div className="text-sm text-gray-600">수출 대상국</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl font-bold text-green-600">수십년</div>
+            <div className="text-3xl font-bold text-green-600">+10년</div>
             <div className="text-sm text-gray-600">무역 전문 경력</div>
           </div>
           <div className="space-y-2">

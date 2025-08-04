@@ -36,7 +36,7 @@ export default function Hero() {
             className="mb-6"
           >
                     <Badge className="bg-blue-600/20 text-blue-300 border border-blue-400/30 px-6 py-2 text-sm font-medium rounded-md backdrop-blur-sm">
-          수십년 전통의 글로벌 수출무역 전문기업
+          +10년 전통의 글로벌 수출무역 전문기업
         </Badge>
           </motion.div>
 
@@ -75,7 +75,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-normal"
           >
-            수십년간 구축한 대륙간 물류 인프라와 대형 제조사 직접 파트너십으로<br />
+            +10년간 구축한 대륙간 물류 인프라와 대형 제조사 직접 파트너십으로<br />
             <strong className="text-blue-300 font-semibold">50+ 글로벌 브랜드</strong>와 함께
             <strong className="text-white font-semibold"> 중공업급 국제무역</strong>의 새로운 표준을 제시합니다
           </motion.p>

@@ -101,7 +101,7 @@ export const companyStrengths = [
   },
   {
     title: '대륙간 물류 인프라',
-    description: '수십년간 구축한 글로벌 물류 네트워크 및 통관 시스템',
+    description: '+10년간 구축한 글로벌 물류 네트워크 및 통관 시스템',
     icon: '📦'
   },
   {
@@ -128,7 +128,7 @@ export const stats = [
     description: '아시아·유럽·아메리카 전역'
   },
   {
-    number: '수십년',
+    number: '+10년',
     label: '무역 전문 경력',
     description: '축적된 국제무역 노하우'
   },
