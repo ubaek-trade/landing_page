@@ -116,7 +116,7 @@ export default function Business() {
             </h3>
             <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
               대형 제조사 직접 파트너십부터 대률간 물류 인프라까지, 
-              청강무역과 함께 역동적 글로벌 비즈니스 성장을 실현하세요
+              천강무역과 함께 역동적 글로벌 비즈니스 성장을 실현하세요
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -9,23 +9,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: '청강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다',
+  title: '천강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다',
   description: '중공업급 글로벌 수출 인프라를 기반으로 화장품, 패션, 명품, 생활용품 등의 대규모 국제무역을 전담하는 종합 수출무역 전문기업입니다.',
-  keywords: '글로벌 무역, 수출무역, 국제물류, 제조업 수출, 대률간 무역, 청강무역, 디지털 무역 플랫폼',
-  authors: [{ name: '청강무역' }],
-  creator: '청강무역',
-  publisher: '청강무역',
+  keywords: '글로벌 무역, 수출무역, 국제물류, 제조업 수출, 대률간 무역, 천강무역, 디지털 무역 플랫폼',
+  authors: [{ name: '천강무역' }],
+  creator: '천강무역',
+  publisher: '천강무역',
   openGraph: {
-    title: '청강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다',
+    title: '천강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다',
     description: '30년간 축적된 노하우와 50+ 글로벌 파트너사와 함께하는 종합 수출무역 전문기업',
     url: 'https://cheonggang-trade.com',
-    siteName: '청강무역',
+    siteName: '천강무역',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: '청강무역 - 글로벌 수출무역 전문기업',
+        alt: '천강무역 - 글로벌 수출무역 전문기업',
       },
     ],
     locale: 'ko_KR',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다',
+    title: '천강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다',
     description: '30년간 축적된 노하우와 50+ 글로벌 파트너사와 함께하는 종합 수출무역 전문기업',
     images: ['/og-image.jpg'],
   },

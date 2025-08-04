@@ -60,7 +60,7 @@ export default function Contact() {
           </span>
           <br />
           <span className="text-white">
-            청강무역과 함께하세요
+            천강무역과 함께하세요
           </span>
         </h2>
                   <p className="text-lg text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">

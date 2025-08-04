@@ -52,7 +52,7 @@ export default function Hero() {
         </span>
         <br />
         <span className="text-blue-400">
-          청강무역의 글로벌 네트워크
+          천강무역의 글로벌 네트워크
         </span>
           </motion.h1>
 
