@@ -2,7 +2,7 @@
 
 export const companyInfo = {
   name: '천강무역',
-  englishName: 'Cheong-Gang Global Trade',
+  englishName: 'Cheon-Gang Global Trade',
   slogan: '글로벌 무역의 새로운 기준, 세계를 연결하다',
   description: '중공업급 글로벌 수출 인프라를 기반으로 화장품, 패션, 명품, 생활용품 등의 대규모 국제무역을 전담하는 종합 수출무역 전문기업입니다.',
   subDescription: '수십년간 축적된 글로벌 물류 네트워크와 대형 제조사 직접 파트너십을 통해 아시아-유럽 전역의 수출무역을 주도하며, 차세대 디지털 무역 플랫폼으로 국제무역의 새로운 표준을 제시합니다.',
