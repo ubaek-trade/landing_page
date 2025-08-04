@@ -77,7 +77,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">청</span>
+              <span className="text-white font-bold text-lg">천</span>
             </div>
             <div>
               <h1 className="text-lg font-bold text-slate-900">{companyInfo.name}</h1>
