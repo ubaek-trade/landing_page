@@ -4,35 +4,35 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-
+import { Separator } from '@/components/ui/separator';
 import { contactInfo, companyInfo } from '@/data/company';
 
 const contactOptions = [
   {
     title: '사업 제휴 문의',
     description: '새로운 브랜드 입점 및 파트너십',
-    icon: '🤝',
+    icon: '',
     action: '제휴 문의하기',
     priority: 'high'
   },
   {
     title: '글로벌 수출 상담',
     description: '해외 진출 및 라이브커머스 상담',
-    icon: '🌍',
+    icon: '',
     action: '수출 상담하기',
     priority: 'high'
   },
   {
     title: '물류/유통 서비스',
     description: '물류 대행 및 유통망 연결',
-    icon: '📦',
+    icon: '',
     action: '물류 문의하기',
     priority: 'medium'
   },
   {
     title: '라이브커머스 진행',
     description: '실시간 방송 판매 서비스',
-    icon: '📹',
+    icon: '',
     action: '방송 문의하기',
     priority: 'medium'
   }
@@ -61,12 +61,12 @@ export default function Contact() {
           </span>
           <br />
           <span className="text-white">
-            유백무역과 함께하세요
+            청강무역과 함께하세요
           </span>
         </h2>
                   <p className="text-lg text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
-          K-뷰티부터 명품까지, 라이브커머스와 글로벌 물류의 혁신적 결합으로
-          <span className="text-blue-300 font-semibold">여러분의 비즈니스 성공</span>을 함께 만들어갑니다
+          대형 제조사 직접 파트너십부터 대률간 물류 인프라까지,
+          <span className="text-blue-300 font-semibold">여러분의 글로벌 비즈니스 성장</span>을 함께 만들어갑니다
         </p>
         </motion.div>
 
@@ -247,10 +247,10 @@ export default function Contact() {
           className="text-center mt-16 pt-8 border-t border-white/20"
         >
           <p className="text-blue-200 mb-4">
-            &quot;K-뷰티를 세계로, 라이브로 연결하다&quot;
+            "글로벌 무역의 새로운 기준, 세계를 연결하다"
           </p>
           <p className="text-sm text-blue-300">
-            © 2025 {companyInfo.name}. All rights reserved.
+            © 2024 {companyInfo.name}. All rights reserved.
           </p>
         </motion.div>
       </div>

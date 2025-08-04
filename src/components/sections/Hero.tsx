@@ -36,7 +36,7 @@ export default function Hero() {
             className="mb-6"
           >
                     <Badge className="bg-blue-600/20 text-blue-300 border border-blue-400/30 px-6 py-2 text-sm font-medium rounded-md backdrop-blur-sm">
-          글로벌 네트워크로 세계를 연결하는 최고의 수출 기업
+          30년 전통의 글로벌 수출무역 전문기업
         </Badge>
           </motion.div>
 
@@ -48,11 +48,11 @@ export default function Hero() {
             className="text-5xl md:text-7xl font-black mb-8 leading-[0.9] tracking-tight"
           >
                     <span className="text-white">
-          글로벌 무역의 새로운 혁신,
+          대륙간 무역을 선도하는,
         </span>
         <br />
         <span className="text-blue-400">
-          유백무역과 함께
+          청강무역의 글로벌 네트워크
         </span>
           </motion.h1>
 
@@ -75,9 +75,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-normal"
           >
-            원청 직접 연결을 통한 최고의 가격 경쟁력으로<br />
-            <strong className="text-blue-300 font-semibold">30+ 프리미엄 브랜드</strong>와 함께
-            <strong className="text-white font-semibold"> 라이브커머스 + 글로벌 물류</strong>의 혁신적 결합을 실현합니다
+            30년간 구축한 대륙간 물류 인프라와 대형 제조사 직접 파트너십으로<br />
+            <strong className="text-blue-300 font-semibold">50+ 글로벌 브랜드</strong>와 함께
+            <strong className="text-white font-semibold"> 중공업급 국제무역</strong>의 새로운 표준을 제시합니다
           </motion.p>
 
           {/* CTA Buttons */}
@@ -89,16 +89,16 @@ export default function Hero() {
           >
                             <Button
           size="lg"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-10 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 text-lg rounded-lg shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-150 hover:scale-105"
         >
-          사업 제휴 문의
+          글로벌 파트너십 문의
         </Button>
         <Button
           size="lg"
           variant="outline"
-          className="border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-10 py-4 text-lg rounded-xl backdrop-blur-sm transition-all duration-200 font-medium"
+          className="border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg rounded-lg backdrop-blur-sm transition-all duration-150"
         >
-          회사 소개서 다운로드
+          기업 수출 솔루션 안내
         </Button>
           </motion.div>
 

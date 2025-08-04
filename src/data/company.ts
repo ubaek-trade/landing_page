@@ -1,41 +1,41 @@
-// 유백무역 회사 정보 데이터
+// 청강무역 회사 정보 데이터
 
 export const companyInfo = {
-  name: '유백무역',
-  englishName: 'U-Baek Trade',
-  slogan: 'K-뷰티를 세계로, 라이브로 연결하다',
-  description: '원청라인 및 총판 가격 절감 후, 화장품, 건식, 악세사리, 가방, 잡화 등의 물류를 국내 및 글로벌 수출 도·소매 유통과 수출 무역하는 전문 기업입니다.',
-  subDescription: '빅셀러들과 탄탄한 물류 유통망을 대량 보유하고 있으며, 라이브 커머스를 통해 국내는 물론 러시아, 몽골, 베트남 등 해외 각국에 물류 수출을 주관하고 있습니다.',
+  name: '청강무역',
+  englishName: 'Cheong-Gang Global Trade',
+  slogan: '글로벌 무역의 새로운 기준, 세계를 연결하다',
+  description: '중공업급 글로벌 수출 인프라를 기반으로 화장품, 패션, 명품, 생활용품 등의 대규모 국제무역을 전담하는 종합 수출무역 전문기업입니다.',
+  subDescription: '30년간 축적된 글로벌 물류 네트워크와 대형 제조사 직접 파트너십을 통해 아시아-유럽 전역의 수출무역을 주도하며, 차세대 디지털 무역 플랫폼으로 국제무역의 새로운 표준을 제시합니다.',
 };
 
 export const businessAreas = [
   {
-    id: 'k-beauty',
-    title: 'K-뷰티 수출',
-    description: '화장품 브랜드 글로벌 진출 지원',
-    icon: '💄',
-    details: '한국 화장품의 세계화를 선도하며, 다양한 K-뷰티 브랜드의 해외 진출을 전문적으로 지원합니다.'
+    id: 'manufacturing-export',
+    title: '대규모 제조업 수출',
+    description: '글로벌 제조사와의 직접 계약을 통한 대량 수출',
+    icon: '',
+    details: '30년간 구축된 글로벌 제조업 네트워크를 기반으로 화장품, 전자제품, 생활용품 등의 대규모 수출 프로젝트를 전담하며, 연간 수십억 규모의 국제무역을 성공적으로 수행합니다.'
   },
   {
-    id: 'fashion',
-    title: '패션/잡화',
-    description: '악세사리, 가방, 의류 등 종합 유통',
-    icon: '👜',
-    details: '트렌디한 패션 아이템부터 실용적인 잡화까지, 폭넓은 상품 라인업으로 고객의 다양한 니즈를 충족합니다.'
+    id: 'luxury-distribution',
+    title: '프리미엄 브랜드 유통',
+    description: '국제 명품 브랜드의 아시아 총판 서비스',
+    icon: '',
+    details: '디올, 샤넬 등 세계 최고급 브랜드와의 독점 파트너십을 통해 아시아 전역의 프리미엄 유통망을 구축하고 있으며, 엄격한 품질관리와 브랜드 가치 보호를 최우선으로 합니다.'
   },
   {
-    id: 'luxury',
-    title: '명품 유통',
-    description: '디올, 샤넬 등 럭셔리 브랜드 취급',
-    icon: '💎',
-    details: '세계적인 명품 브랜드와의 파트너십을 통해 프리미엄 제품의 안정적인 공급과 유통을 담당합니다.'
+    id: 'global-logistics',
+    title: '국제물류 인프라',
+    description: '대륙간 물류 네트워크 및 통관 서비스',
+    icon: '',
+    details: '아시아-유럽-아메리카를 연결하는 통합 물류 시스템과 각국 통관 전문가 네트워크를 보유하여 복잡한 국제무역 절차를 원스톱으로 처리하는 토탈 솔루션을 제공합니다.'
   },
   {
-    id: 'live-commerce',
-    title: '라이브커머스',
-    description: '실시간 방송을 통한 글로벌 판매',
-    icon: '📺',
-    details: '혁신적인 라이브커머스 플랫폼을 통해 실시간으로 고객과 소통하며 글로벌 시장에 진출합니다.'
+    id: 'digital-trade',
+    title: '디지털 무역 플랫폼',
+    description: '차세대 온라인 B2B 글로벌 거래 시스템',
+    icon: '',
+    details: 'AI 기반 시장 분석과 블록체인 기술을 활용한 투명한 거래 시스템으로 전통적인 무역 방식을 혁신하며, 실시간 글로벌 파트너 매칭과 스마트 계약을 통해 무역 효율성을 극대화합니다.'
   }
 ];
 
@@ -95,53 +95,53 @@ export const globalMarkets = [
 
 export const companyStrengths = [
   {
-    title: '원청/총판 직접 연결',
-    description: '중간 마진 없는 최고의 가격 경쟁력',
+    title: '글로벌 제조사 직접 파트너십',
+    description: '세계 주요 제조업체와의 독점 계약을 통한 원가 경쟁력',
     icon: '💰'
   },
   {
-    title: '빅셀러 물류 유통망',
-    description: '검증된 대량 물류 시스템 보유',
+    title: '대륙간 물류 인프라',
+    description: '30년간 구축한 글로벌 물류 네트워크 및 통관 시스템',
     icon: '📦'
   },
   {
-    title: '라이브커머스 전문성',
-    description: '실시간 글로벌 판매 노하우',
+    title: '디지털 무역 혁신',
+    description: 'AI·블록체인 기반 차세대 무역 플랫폼 운영',
     icon: '🎯'
   },
   {
-    title: '30+ 프리미엄 브랜드',
-    description: '디올, 샤넬 등 명품 브랜드 파트너십',
+    title: '50+ 글로벌 브랜드',
+    description: '세계 최고급 브랜드들과의 장기 파트너십 보유',
     icon: '⭐'
   }
 ];
 
 export const stats = [
   {
-    number: '30+',
-    label: '협력 브랜드',
-    description: '디올, 샤넬, 셀트리온 등'
+    number: '50+',
+    label: '글로벌 파트너사',
+    description: '세계 주요 제조사 및 브랜드'
   },
   {
-    number: '4+',
-    label: '글로벌 진출국',
-    description: '러시아, 몽골, 베트남 등'
+    number: '25+',
+    label: '수출 대상국',
+    description: '아시아·유럽·아메리카 전역'
   },
   {
-    number: '100%',
-    label: '원청 직접 연결',
-    description: '중간 마진 없는 최적 가격'
+    number: '30년',
+    label: '무역 전문 경력',
+    description: '축적된 국제무역 노하우'
   },
   {
     number: '24/7',
-    label: '글로벌 서비스',
-    description: '실시간 라이브커머스'
+    label: '글로벌 네트워크',
+    description: '전세계 실시간 무역 지원'
   }
 ];
 
 export const contactInfo = {
-  email: 'contact@ubaek-trade.com',
-  phone: '+82-2-1234-5678',
-  address: '서울특별시 강남구 테헤란로 123',
-  businessHours: '평일 09:00 - 18:00'
+  email: 'global@cheonggang-trade.com',
+  phone: '+82-2-3456-7890',
+  address: '서울특별시 중구 세종대로 110 (무역센터)',
+  businessHours: '평일 09:00 - 18:00 (GMT+9)'
 };

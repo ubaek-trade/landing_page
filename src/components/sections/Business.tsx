@@ -37,15 +37,15 @@ export default function Business() {
           핵심 사업영역
         </Badge>
                   <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-          <span className="text-slate-800">4대 핵심 사업으로</span>
+          <span className="text-slate-800">중공업급 글로벌 인프라로</span>
           <br />
           <span className="text-blue-600">
-            글로벌 시장을 선도합니다
+            대륙간 무역을 선도합니다
           </span>
         </h2>
                   <p className="text-lg text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
-          K-뷰티부터 명품까지, 라이브커머스와 글로벌 물류를 결합한
-          <span className="text-blue-600 font-semibold"> 혁신적인 유통 플랫폼</span>을 제공합니다
+          대형 제조사 직접 파트너십부터 대률간 물류 네트워크까지,
+          <span className="text-blue-600 font-semibold"> 30년 경력의 종합 수출무역 전문 서비스</span>를 제공합니다
         </p>
         </motion.div>
 
@@ -57,7 +57,7 @@ export default function Business() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
-          {businessAreas.map((business) => (
+          {businessAreas.map((business, index) => (
             <motion.div
               key={business.id}
               variants={item}
@@ -112,11 +112,11 @@ export default function Business() {
         >
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              🚀 글로벌 진출을 꿈꾸시나요?
+              🌐 글로벌 수출무역에 도전하시나요?
             </h3>
             <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
-              원청 직접 연결부터 라이브커머스까지, 
-              유백무역과 함께 K-뷰티의 세계화를 실현하세요
+              대형 제조사 직접 파트너십부터 대률간 물류 인프라까지, 
+              청강무역과 함께 역동적 글로벌 비즈니스 성장을 실현하세요
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -125,14 +125,14 @@ export default function Business() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
               >
-                💬 상담 문의하기
+                🌍 글로벌 파트너십 문의
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
               >
-                📋 사업 제안서 받기
+                📨 수출무역 솔루션 안내
               </motion.button>
             </div>
           </div>
@@ -147,20 +147,20 @@ export default function Business() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
           <div className="space-y-2">
-            <div className="text-3xl font-bold text-blue-600">30+</div>
-            <div className="text-sm text-gray-600">협력 브랜드</div>
+            <div className="text-3xl font-bold text-blue-600">50+</div>
+            <div className="text-sm text-gray-600">글로벌 파트너사</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl font-bold text-purple-600">4+</div>
-            <div className="text-sm text-gray-600">글로벌 진출국</div>
+            <div className="text-3xl font-bold text-purple-600">25+</div>
+            <div className="text-sm text-gray-600">수출 대상국</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl font-bold text-green-600">100%</div>
-            <div className="text-sm text-gray-600">원청 직접 연결</div>
+            <div className="text-3xl font-bold text-green-600">30년</div>
+            <div className="text-sm text-gray-600">무역 전문 경력</div>
           </div>
           <div className="space-y-2">
             <div className="text-3xl font-bold text-orange-600">24/7</div>
-            <div className="text-sm text-gray-600">글로벌 서비스</div>
+            <div className="text-sm text-gray-600">글로벌 네트워크</div>
           </div>
         </motion.div>
       </div>
