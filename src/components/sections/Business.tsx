@@ -45,7 +45,7 @@ export default function Business() {
         </h2>
                   <p className="text-lg text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
           대형 제조사 직접 파트너십부터 대률간 물류 네트워크까지,
-          <span className="text-blue-600 font-semibold"> 30년 경력의 종합 수출무역 전문 서비스</span>를 제공합니다
+          <span className="text-blue-600 font-semibold"> 수십년 경력의 종합 수출무역 전문 서비스</span>를 제공합니다
         </p>
         </motion.div>
 
@@ -65,7 +65,7 @@ export default function Business() {
               scale: 1.05,
               transition: { duration: 0.15, ease: "easeOut" }
             }}
-              className="h-full"
+              className="h-full cursor-pointer"
             >
                           <Card className="h-full group cursor-pointer border border-slate-200 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-200 bg-white rounded-xl overflow-hidden hover:-translate-y-1">
               <CardHeader className="text-center pb-6 pt-8">
@@ -123,14 +123,14 @@ export default function Business() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors cursor-pointer"
               >
                 🌍 글로벌 파트너십 문의
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer"
               >
                 📨 수출무역 솔루션 안내
               </motion.button>
@@ -155,7 +155,7 @@ export default function Business() {
             <div className="text-sm text-gray-600">수출 대상국</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl font-bold text-green-600">30년</div>
+            <div className="text-3xl font-bold text-green-600">수십년</div>
             <div className="text-sm text-gray-600">무역 전문 경력</div>
           </div>
           <div className="space-y-2">

@@ -77,7 +77,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">유</span>
+              <span className="text-white font-bold text-lg">청</span>
             </div>
             <div>
               <h1 className="text-lg font-bold text-slate-900">{companyInfo.name}</h1>
@@ -91,7 +91,7 @@ export default function Navigation() {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="text-slate-600 hover:text-blue-600 font-medium transition-colors duration-200"
+                className="text-slate-600 hover:text-blue-600 font-medium transition-all duration-200 cursor-pointer hover:scale-105 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:transition-all after:duration-200 hover:after:w-full"
               >
                 {item.name}
               </button>
@@ -103,7 +103,7 @@ export default function Navigation() {
             <Button 
               size="sm"
               onClick={() => handleNavClick('#contact')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
             >
               문의하기
             </Button>
@@ -113,7 +113,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button 
               onClick={toggleMobileMenu}
-              className="text-slate-600 hover:text-slate-900 p-2"
+              className="text-slate-600 hover:text-slate-900 p-2 cursor-pointer transition-all duration-200 hover:scale-110 hover:bg-slate-100 rounded-lg"
               aria-label="메뉴 열기"
             >
               <svg 
@@ -150,7 +150,8 @@ export default function Navigation() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="block w-full text-left text-slate-600 hover:text-blue-600 font-medium text-lg py-2 transition-colors duration-200"
+                    whileHover={{ x: 4, transition: { duration: 0.2 } }}
+                    className="block w-full text-left text-slate-600 hover:text-blue-600 font-medium text-lg py-2 transition-all duration-200 cursor-pointer hover:bg-blue-50 rounded-lg px-2"
                   >
                     {item.name}
                   </motion.button>
@@ -164,7 +165,7 @@ export default function Navigation() {
                 >
                   <Button 
                     onClick={() => handleNavClick('#contact')}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
                   >
                     문의하기
                   </Button>

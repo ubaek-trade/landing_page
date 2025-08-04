@@ -71,7 +71,7 @@ export default function Contact() {
         </motion.div>
 
         {/* Contact Options Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {contactOptions.map((option, index) => (
             <motion.div
               key={option.title}
@@ -79,57 +79,51 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, transition: { duration: 0.15, ease: "easeOut" } }}
-              className="relative"
+              whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
+              className="relative cursor-pointer"
             >
-                          <Card className={`h-full border ${
-              option.priority === 'high' 
-                ? 'border-blue-400/30 bg-blue-900/20 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-500/20' 
-                : 'border-slate-400/20 bg-slate-800/40 hover:border-slate-400/40 hover:shadow-xl hover:shadow-slate-500/10'
-            } backdrop-blur-md transition-all duration-200 rounded-xl overflow-hidden`}>
+              <Card className={`h-full border backdrop-blur-sm transition-all duration-300 rounded-2xl overflow-hidden group ${
+                option.priority === 'high' 
+                  ? 'border-blue-400/40 bg-gradient-to-br from-blue-900/30 to-purple-900/20 hover:border-blue-400/60 hover:shadow-2xl hover:shadow-blue-500/20' 
+                  : 'border-white/20 bg-white/5 hover:border-white/30 hover:shadow-xl hover:shadow-white/5'
+              }`}>
                 
-                {option.priority === 'high' && (
-                  <div className="absolute -top-2 -right-2">
-                    <Badge className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs px-3 py-1.5 rounded-full shadow-lg">
-                      인기
-                    </Badge>
-                  </div>
-                )}
-                
-                <CardHeader className="text-center pt-8 pb-6">
-                  <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center ${
+                <CardHeader className="text-center pt-8 pb-6 relative">
+                  {option.priority === 'high' && (
+                    <div className="absolute top-3 right-3">
+                      <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs px-3 py-1.5 rounded-full shadow-xl shadow-yellow-500/30 font-semibold border-2 border-white/20">
+                        추천
+                      </Badge>
+                    </div>
+                  )}
+                  
+                  <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
                     option.priority === 'high' 
-                      ? 'bg-gradient-to-br from-blue-500/20 to-purple-500/20' 
-                      : 'bg-gradient-to-br from-slate-500/20 to-slate-600/20'
+                      ? 'bg-gradient-to-br from-blue-500/30 to-purple-500/30 shadow-lg shadow-blue-500/20' 
+                      : 'bg-white/10 shadow-lg shadow-white/5'
                   }`}>
                     <div className={`w-8 h-8 rounded-lg ${
                       option.priority === 'high' 
                         ? 'bg-gradient-to-br from-blue-400 to-purple-500' 
-                        : 'bg-gradient-to-br from-slate-400 to-slate-500'
+                        : 'bg-gradient-to-br from-slate-300 to-slate-400'
                     }`}></div>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-white mb-3">
+                  
+                  <CardTitle className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
                     {option.title}
                   </CardTitle>
-                  <p className="text-slate-300 font-light text-lg">
+                  <p className="text-slate-300 text-base leading-relaxed">
                     {option.description}
                   </p>
-                  
-                  {/* Gradient line */}
-                  <div className={`w-12 h-1 rounded-full mx-auto mt-4 ${
-                    option.priority === 'high' 
-                      ? 'bg-gradient-to-r from-blue-400 to-purple-500' 
-                      : 'bg-gradient-to-r from-slate-400 to-slate-500'
-                  }`} />
                 </CardHeader>
                 
-                <CardContent className="text-center px-8 pb-8">
+                <CardContent className="px-6 pb-6">
                   <Button 
-                    className={`w-full ${
+                    className={`w-full font-semibold transition-all duration-200 py-3 rounded-xl cursor-pointer ${
                       option.priority === 'high'
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105'
-                        : 'bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-white/30 backdrop-blur-sm'
-                    } font-semibold transition-all duration-150 py-3 rounded-xl`}
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40'
+                        : 'bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/50 backdrop-blur-sm'
+                    }`}
                   >
                     {option.action}
                   </Button>
@@ -145,7 +139,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="bg-white/[0.03] backdrop-blur-xl rounded-3xl p-10 border border-white/10 shadow-2xl shadow-black/20"
+          className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-white/20 shadow-2xl shadow-black/20"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
@@ -168,21 +162,21 @@ export default function Contact() {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8" />
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
+                  <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
                     <span className="text-blue-300 text-sm font-medium">이메일</span>
-                    <p className="text-white font-semibold text-lg">{contactInfo.email}</p>
+                    <p className="text-white font-semibold">{contactInfo.email}</p>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
                     <span className="text-blue-300 text-sm font-medium">연락처</span>
-                    <p className="text-white font-semibold text-lg">{contactInfo.phone}</p>
+                    <p className="text-white font-semibold">{contactInfo.phone}</p>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
                     <span className="text-blue-300 text-sm font-medium">주소</span>
-                    <p className="text-white font-semibold">{contactInfo.address}</p>
+                    <p className="text-white font-semibold text-sm">{contactInfo.address}</p>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
                     <span className="text-blue-300 text-sm font-medium">운영시간</span>
-                    <p className="text-white font-semibold">{contactInfo.businessHours}</p>
+                    <p className="text-white font-semibold text-sm">{contactInfo.businessHours}</p>
                   </div>
                 </div>
               </div>
@@ -194,44 +188,44 @@ export default function Contact() {
                 빠른 문의
               </h3>
               
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <div>
                   <input
                     type="text"
                     placeholder="회사명/담당자명"
-                    className="w-full p-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-blue-200 focus:border-yellow-400 focus:outline-none transition-colors duration-150"
+                    className="w-full p-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-slate-400 focus:border-blue-400 focus:bg-white/15 focus:outline-none transition-all duration-200"
                   />
                 </div>
                 <div>
                   <input
                     type="email"
                     placeholder="이메일 주소"
-                    className="w-full p-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-blue-200 focus:border-yellow-400 focus:outline-none transition-colors duration-150"
+                    className="w-full p-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-slate-400 focus:border-blue-400 focus:bg-white/15 focus:outline-none transition-all duration-200"
                   />
                 </div>
                 <div>
-                  <select className="w-full p-3 rounded-lg bg-white/10 border border-white/30 text-white focus:border-yellow-400 focus:outline-none transition-colors">
-                    <option value="">문의 유형을 선택하세요</option>
-                    <option value="partnership">사업 제휴</option>
-                    <option value="export">글로벌 수출</option>
-                    <option value="logistics">물류/유통</option>
-                    <option value="live-commerce">라이브커머스</option>
+                  <select className="w-full p-4 rounded-xl bg-white/10 border border-white/30 text-white focus:border-blue-400 focus:bg-white/15 focus:outline-none transition-all duration-200">
+                    <option value="" className="bg-slate-800 text-white">문의 유형을 선택하세요</option>
+                    <option value="partnership" className="bg-slate-800 text-white">사업 제휴</option>
+                    <option value="export" className="bg-slate-800 text-white">글로벌 수출</option>
+                    <option value="logistics" className="bg-slate-800 text-white">물류/유통</option>
+                    <option value="live-commerce" className="bg-slate-800 text-white">라이브커머스</option>
                   </select>
                 </div>
                 <div>
                   <textarea
                     placeholder="문의 내용을 자세히 적어주세요..."
                     rows={4}
-                    className="w-full p-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-blue-200 focus:border-yellow-400 focus:outline-none transition-colors duration-150 resize-none"
+                    className="w-full p-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-slate-400 focus:border-blue-400 focus:bg-white/15 focus:outline-none transition-all duration-200 resize-none"
                   />
                 </div>
                 
-                              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 text-lg rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-150 hover:scale-[1.02]">
-                문의 보내기
-              </Button>
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 text-lg rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-200 hover:scale-[1.01] cursor-pointer">
+                  문의 보내기
+                </Button>
                 
-                <p className="text-sm text-slate-400 text-center font-light">
-                  문의 접수 후 <span className="text-blue-300 font-medium">24시간 내</span>에 담당자가 연락드립니다
+                <p className="text-sm text-slate-400 text-center">
+                  문의 접수 후 <span className="text-blue-300 font-semibold">24시간 내</span>에 담당자가 연락드립니다
                 </p>
               </div>
             </div>
@@ -250,7 +244,7 @@ export default function Contact() {
             "글로벌 무역의 새로운 기준, 세계를 연결하다"
           </p>
           <p className="text-sm text-blue-300">
-            © 2024 {companyInfo.name}. All rights reserved.
+            © 2025 {companyInfo.name}. All rights reserved.
           </p>
         </motion.div>
       </div>

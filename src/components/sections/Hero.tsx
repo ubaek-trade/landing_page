@@ -36,7 +36,7 @@ export default function Hero() {
             className="mb-6"
           >
                     <Badge className="bg-blue-600/20 text-blue-300 border border-blue-400/30 px-6 py-2 text-sm font-medium rounded-md backdrop-blur-sm">
-          30년 전통의 글로벌 수출무역 전문기업
+          수십년 전통의 글로벌 수출무역 전문기업
         </Badge>
           </motion.div>
 
@@ -75,7 +75,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-normal"
           >
-            30년간 구축한 대륙간 물류 인프라와 대형 제조사 직접 파트너십으로<br />
+            수십년간 구축한 대륙간 물류 인프라와 대형 제조사 직접 파트너십으로<br />
             <strong className="text-blue-300 font-semibold">50+ 글로벌 브랜드</strong>와 함께
             <strong className="text-white font-semibold"> 중공업급 국제무역</strong>의 새로운 표준을 제시합니다
           </motion.p>
@@ -89,14 +89,14 @@ export default function Hero() {
           >
                             <Button
           size="lg"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 text-lg rounded-lg shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-150 hover:scale-105"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 text-lg rounded-lg shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-150 hover:scale-105 cursor-pointer"
         >
           글로벌 파트너십 문의
         </Button>
         <Button
           size="lg"
           variant="outline"
-          className="border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg rounded-lg backdrop-blur-sm transition-all duration-150"
+          className="border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg rounded-lg backdrop-blur-sm transition-all duration-150 hover:scale-105 cursor-pointer"
         >
           기업 수출 솔루션 안내
         </Button>
