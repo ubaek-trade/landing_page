@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 import { contactInfo, companyInfo } from '@/data/company';
 
 const contactOptions = [
@@ -241,7 +240,7 @@ export default function Contact() {
           className="text-center mt-16 pt-8 border-t border-white/20"
         >
           <p className="text-blue-200 mb-4">
-            "글로벌 무역의 새로운 기준, 세계를 연결하다"
+            &ldquo;글로벌 무역의 새로운 기준, 세계를 연결하다&rdquo;
           </p>
           <p className="text-sm text-blue-300">
             © 2025 {companyInfo.name}. All rights reserved.
