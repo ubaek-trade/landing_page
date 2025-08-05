@@ -237,10 +237,39 @@ export default function Contact() {
                     <span className="text-blue-300 text-sm font-medium">이메일</span>
                     <p className="text-white font-semibold text-sm">{contactInfo.email}</p>
                   </div>
-                  <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <span className="text-blue-300 text-sm font-medium">주소</span>
-                    <p className="text-white font-semibold text-sm">{contactInfo.address}</p>
-                  </div>
+                  <a 
+                    href="https://naver.me/FCrXSOua"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block space-y-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-400/50 hover:bg-blue-900/10 transition-all duration-200 cursor-pointer"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-blue-300 text-sm font-medium">주소</span>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-xs text-blue-300 group-hover:text-blue-200 transition-colors">
+                          지도보기
+                        </span>
+                        <svg 
+                          className="w-4 h-4 text-blue-400 group-hover:text-blue-300 transition-all duration-200 group-hover:scale-110" 
+                          fill="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <svg 
+                          className="w-3 h-3 text-blue-400 group-hover:text-blue-300 group-hover:translate-x-1 transition-all duration-200" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </div>
+                    </div>
+                    <p className="text-white font-semibold text-sm group-hover:text-blue-100 transition-colors">
+                      {contactInfo.address}
+                    </p>
+                  </a>
                 </div>
               </div>
             </div>
