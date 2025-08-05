@@ -1,10 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { contactInfo, companyInfo } from '@/data/company';
+import emailjs from '@emailjs/browser';
 
 const contactOptions = [
   {
@@ -38,6 +40,64 @@ const contactOptions = [
 ];
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    type: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // EmailJS 실제 설정값
+      const serviceID = 'service_xdxxalu';
+      const templateID = 'template_aoss9sl';
+      const publicKey = 'GiEta5njvJblfmcef';
+
+      console.log('📧 이메일 전송 시도:', {
+        받는사람: 'ojyoung24@naver.com',
+        보내는사람: formData.name,
+        이메일: formData.email,
+        문의유형: formData.type,
+        내용: formData.message
+      });
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        to_email: 'ojyoung24@naver.com',
+        inquiry_type: formData.type,
+        message: formData.message,
+        to_name: '담당자님'
+      };
+
+      // 실제 EmailJS로 이메일 전송
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
+      
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', type: '', message: '' });
+    } catch (error) {
+      console.error('이메일 전송 실패:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-slate-900 text-white relative overflow-hidden">
 
@@ -150,9 +210,12 @@ export default function Contact() {
               
               <div className="space-y-4">
                 <div>
-                                  <h4 className="text-2xl font-bold text-blue-300 mb-4">
+                                  <h4 className="text-2xl font-bold text-blue-300 mb-2">
                   {companyInfo.name} <span className="text-slate-300 font-light">({companyInfo.englishName})</span>
                 </h4>
+                <p className="text-white font-medium mb-4">
+                  대표이사: {contactInfo.ceo} {contactInfo.ceoTitle}
+                </p>
                 <p className="text-slate-300 leading-relaxed font-light text-lg">
                   {companyInfo.description}
                 </p>
@@ -162,20 +225,21 @@ export default function Contact() {
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <span className="text-blue-300 text-sm font-medium">이메일</span>
-                    <p className="text-white font-semibold">{contactInfo.email}</p>
+                    <span className="text-blue-300 text-sm font-medium">대표이사</span>
+                    <p className="text-white font-semibold">{contactInfo.ceo}</p>
+                    <p className="text-slate-300 text-xs">{contactInfo.ceoTitle}</p>
                   </div>
                   <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
                     <span className="text-blue-300 text-sm font-medium">연락처</span>
                     <p className="text-white font-semibold">{contactInfo.phone}</p>
                   </div>
                   <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <span className="text-blue-300 text-sm font-medium">주소</span>
-                    <p className="text-white font-semibold text-sm">{contactInfo.address}</p>
+                    <span className="text-blue-300 text-sm font-medium">이메일</span>
+                    <p className="text-white font-semibold text-sm">{contactInfo.email}</p>
                   </div>
                   <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <span className="text-blue-300 text-sm font-medium">운영시간</span>
-                    <p className="text-white font-semibold text-sm">{contactInfo.businessHours}</p>
+                    <span className="text-blue-300 text-sm font-medium">주소</span>
+                    <p className="text-white font-semibold text-sm">{contactInfo.address}</p>
                   </div>
                 </div>
               </div>
@@ -187,46 +251,80 @@ export default function Contact() {
                 빠른 문의
               </h3>
               
-              <div className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
                     placeholder="회사명/담당자명"
+                    required
                     className="w-full p-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-slate-400 focus:border-blue-400 focus:bg-white/15 focus:outline-none transition-all duration-200"
                   />
                 </div>
                 <div>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="이메일 주소"
+                    required
                     className="w-full p-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-slate-400 focus:border-blue-400 focus:bg-white/15 focus:outline-none transition-all duration-200"
                   />
                 </div>
                 <div>
-                  <select className="w-full p-4 rounded-xl bg-white/10 border border-white/30 text-white focus:border-blue-400 focus:bg-white/15 focus:outline-none transition-all duration-200">
+                  <select 
+                    name="type"
+                    value={formData.type}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full p-4 rounded-xl bg-white/10 border border-white/30 text-white focus:border-blue-400 focus:bg-white/15 focus:outline-none transition-all duration-200"
+                  >
                     <option value="" className="bg-slate-800 text-white">문의 유형을 선택하세요</option>
-                    <option value="partnership" className="bg-slate-800 text-white">사업 제휴</option>
-                    <option value="export" className="bg-slate-800 text-white">글로벌 수출</option>
-                    <option value="logistics" className="bg-slate-800 text-white">물류/유통</option>
-                    <option value="live-commerce" className="bg-slate-800 text-white">라이브커머스</option>
+                    <option value="사업 제휴" className="bg-slate-800 text-white">사업 제휴</option>
+                    <option value="글로벌 수출" className="bg-slate-800 text-white">글로벌 수출</option>
+                    <option value="물류/유통" className="bg-slate-800 text-white">물류/유통</option>
+                    <option value="라이브커머스" className="bg-slate-800 text-white">라이브커머스</option>
                   </select>
                 </div>
                 <div>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="문의 내용을 자세히 적어주세요..."
                     rows={4}
+                    required
                     className="w-full p-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-slate-400 focus:border-blue-400 focus:bg-white/15 focus:outline-none transition-all duration-200 resize-none"
                   />
                 </div>
                 
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 text-lg rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-200 hover:scale-[1.01] cursor-pointer">
-                  문의 보내기
+                <Button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 text-lg rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-200 hover:scale-[1.01] cursor-pointer disabled:opacity-50 disabled:hover:scale-100"
+                >
+                  {isSubmitting ? '전송 중...' : '문의 보내기'}
                 </Button>
+                
+                {submitStatus === 'success' && (
+                  <p className="text-sm text-green-400 text-center font-medium">
+                    ✅ 문의가 성공적으로 전송되었습니다!
+                  </p>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <p className="text-sm text-red-400 text-center font-medium">
+                    ❌ 전송에 실패했습니다. 다시 시도해주세요.
+                  </p>
+                )}
                 
                 <p className="text-sm text-slate-400 text-center">
                   문의 접수 후 <span className="text-blue-300 font-semibold">24시간 내</span>에 담당자가 연락드립니다
                 </p>
-              </div>
+              </form>
             </div>
           </div>
         </motion.div>

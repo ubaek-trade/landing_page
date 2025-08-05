@@ -140,8 +140,10 @@ export const stats = [
 ];
 
 export const contactInfo = {
-  email: 'global@cheonggang-trade.com',
-  phone: '+82-2-3456-7890',
-  address: '서울특별시 중구 세종대로 110 (무역센터)',
-  businessHours: '평일 09:00 - 18:00 (GMT+9)'
+  email: 'changwoohyunkr@naver.com',
+  phone: '010-2537-9643',
+  address: '경기 남양주시 순화궁로 339',
+  businessHours: '평일 09:00 - 18:00 (GMT+9)',
+  ceo: '현창우',
+  ceoTitle: '대표/CEO'
 };
