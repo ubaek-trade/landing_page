@@ -13,6 +13,6 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 
-Sitemap: https://cheongang-trade.com/sitemap.xml
-Host: https://cheongang-trade.com
+Sitemap: https://cheongangtrade.com/sitemap.xml
+Host: https://cheongangtrade.com/
 
