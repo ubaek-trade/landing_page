@@ -49,7 +49,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: '1f491af3c13f4155',
+    other: {
+      'naver-site-verification': 'cd414831ebb33fabb118192db49744651a3226a0',
+    },
   },
 };
 
