@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: Yeti
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://cheonggang-trade.com/sitemap.xml
+Host: https://cheonggang-trade.com
+
