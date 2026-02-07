@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://cheonggang-trade.com';
+  const baseUrl = 'https://cheongangtrade.com';
   
   return [
     {

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '천강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다',
     description: '30년간 축적된 노하우와 50+ 글로벌 파트너사와 함께하는 종합 수출무역 전문기업',
-    url: 'https://cheonggang-trade.com',
+    url: 'https://cheongangtrade.com',
     siteName: '천강무역',
     images: [
       {
