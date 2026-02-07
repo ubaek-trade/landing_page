@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Factory, Crown, Ship, Monitor, Globe, ArrowRight, Send } from 'lucide-react';
 
 const container = {
   hidden: { opacity: 0 },
@@ -19,6 +20,8 @@ const item = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 }
 };
+
+const areaIcons = [Factory, Crown, Ship, Monitor];
 
 export default function Business() {
   const { t } = useLanguage();
@@ -66,49 +69,50 @@ export default function Business() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
-          {t.business.areas.map((business) => (
-            <motion.div
-              key={business.id}
-              variants={item}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.15, ease: "easeOut" }
-              }}
-              className="h-full cursor-pointer"
-            >
-              <Card className="h-full group cursor-pointer border border-slate-200 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-200 bg-white rounded-xl overflow-hidden hover:-translate-y-1">
-                <CardHeader className="text-center pb-6 pt-8">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg">
-                    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                      <div className="w-6 h-6 bg-blue-600 rounded"></div>
+          {t.business.areas.map((business, index) => {
+            const Icon = areaIcons[index];
+            return (
+              <motion.div
+                key={business.id}
+                variants={item}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.15, ease: "easeOut" }
+                }}
+                className="h-full cursor-pointer"
+              >
+                <Card className="h-full group cursor-pointer border border-slate-200 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-200 bg-white rounded-xl overflow-hidden hover:-translate-y-1">
+                  <CardHeader className="text-center pb-6 pt-8">
+                    <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg">
+                      <Icon className="w-10 h-10 text-white" strokeWidth={1.5} />
                     </div>
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-150 mb-4">
-                    {business.title}
-                  </CardTitle>
-                  <p className="text-blue-600 font-semibold text-base tracking-wide">
-                    {business.description}
-                  </p>
+                    <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-150 mb-4">
+                      {business.title}
+                    </CardTitle>
+                    <p className="text-blue-600 font-semibold text-base tracking-wide">
+                      {business.description}
+                    </p>
 
-                  {/* Gradient line */}
-                  <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full mx-auto mt-6 group-hover:w-24 transition-all duration-300" />
-                </CardHeader>
-                <CardContent className="px-8 pb-8">
-                  <p className="text-slate-600 leading-relaxed mb-8 font-normal text-base">
-                    {business.details}
-                  </p>
+                    {/* Gradient line */}
+                    <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full mx-auto mt-6 group-hover:w-24 transition-all duration-300" />
+                  </CardHeader>
+                  <CardContent className="px-8 pb-8">
+                    <p className="text-slate-600 leading-relaxed mb-8 font-normal text-base">
+                      {business.details}
+                    </p>
 
-                  {/* CTA Button */}
-                  <div className="mt-6">
-                    <div className="inline-flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-150 text-base group-hover:translate-x-2">
-                      <span>{t.business.learnMore}</span>
-                      <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-150">&rarr;</span>
+                    {/* CTA Button */}
+                    <div className="mt-6">
+                      <div className="inline-flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-150 text-base group-hover:translate-x-2">
+                        <span>{t.business.learnMore}</span>
+                        <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-150" />
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                  </CardContent>
+                </Card>
+              </motion.div>
+            );
+          })}
         </motion.div>
 
         {/* Bottom CTA Section */}
@@ -120,9 +124,12 @@ export default function Business() {
           className="mt-16 text-center"
         >
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              {t.business.ctaHeading}
-            </h3>
+            <div className="flex items-center justify-center mb-4">
+              <Globe className="w-8 h-8 mr-3 text-blue-200" />
+              <h3 className="text-2xl md:text-3xl font-bold">
+                {t.business.ctaHeading}
+              </h3>
+            </div>
             <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
               {t.business.ctaDescription}
             </p>
@@ -131,15 +138,17 @@ export default function Business() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors cursor-pointer"
               >
+                <Globe className="w-5 h-5 mr-2" />
                 {t.business.ctaPrimary}
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer"
               >
+                <Send className="w-5 h-5 mr-2" />
                 {t.business.ctaSecondary}
               </motion.button>
             </div>

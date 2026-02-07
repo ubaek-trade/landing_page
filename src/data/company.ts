@@ -5,7 +5,7 @@ export const companyInfo = {
   englishName: 'Cheon-Gang Global Trade',
   slogan: '글로벌 무역의 새로운 기준, 세계를 연결하다',
   description: '중공업급 글로벌 수출 인프라를 기반으로 화장품, 패션, 명품, 생활용품 등의 대규모 국제무역을 전담하는 종합 수출무역 전문기업입니다.',
-  subDescription: '수십년간 축적된 글로벌 물류 네트워크와 대형 제조사 직접 파트너십을 통해 아시아-유럽 전역의 수출무역을 주도하며, 차세대 디지털 무역 플랫폼으로 국제무역의 새로운 표준을 제시합니다.',
+  subDescription: '다년간 축적된 글로벌 물류 네트워크와 대형 제조사 직접 파트너십을 통해 아시아-유럽 전역의 수출무역을 주도하며, 차세대 디지털 무역 플랫폼으로 국제무역의 새로운 표준을 제시합니다.',
 };
 
 export const businessAreas = [
@@ -14,7 +14,7 @@ export const businessAreas = [
     title: '대규모 제조업 수출',
     description: '글로벌 제조사와의 직접 계약을 통한 대량 수출',
     icon: '',
-    details: '수십년간 구축된 글로벌 제조업 네트워크를 기반으로 화장품, 전자제품, 생활용품 등의 대규모 수출 프로젝트를 전담하며, 연간 수십억 규모의 국제무역을 성공적으로 수행합니다.'
+    details: '다년간 구축된 글로벌 제조업 네트워크를 기반으로 화장품, 전자제품, 생활용품 등의 대규모 수출 프로젝트를 전담하며, 대규모 국제무역을 성공적으로 수행합니다.'
   },
   {
     id: 'luxury-distribution',
@@ -101,7 +101,7 @@ export const companyStrengths = [
   },
   {
     title: '대륙간 물류 인프라',
-    description: '+10년간 구축한 글로벌 물류 네트워크 및 통관 시스템',
+    description: '다년간 구축한 글로벌 물류 네트워크 및 통관 시스템',
     icon: '📦'
   },
   {
@@ -128,7 +128,7 @@ export const stats = [
     description: '아시아·유럽·아메리카 전역'
   },
   {
-    number: '+10년',
+    number: '다년간',
     label: '무역 전문 경력',
     description: '축적된 국제무역 노하우'
   },

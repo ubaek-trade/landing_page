@@ -8,12 +8,13 @@ import { Badge } from '@/components/ui/badge';
 import { contactInfo } from '@/data/company';
 import { useLanguage } from '@/contexts/LanguageContext';
 import emailjs from '@emailjs/browser';
+import { Handshake, Globe, Truck, Video, User, Phone, Mail, MapPin } from 'lucide-react';
 
 const contactOptionsMeta = [
-  { priority: 'high', icon: '' },
-  { priority: 'high', icon: '' },
-  { priority: 'medium', icon: '' },
-  { priority: 'medium', icon: '' },
+  { priority: 'high', icon: Handshake },
+  { priority: 'high', icon: Globe },
+  { priority: 'medium', icon: Truck },
+  { priority: 'medium', icon: Video },
 ];
 
 export default function Contact() {
@@ -101,6 +102,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {t.contact.options.map((option, index) => {
             const meta = contactOptionsMeta[index];
+            const Icon = meta.icon;
             return (
               <motion.div
                 key={index}
@@ -131,11 +133,9 @@ export default function Contact() {
                         ? 'bg-gradient-to-br from-blue-500/30 to-purple-500/30 shadow-lg shadow-blue-500/20'
                         : 'bg-white/10 shadow-lg shadow-white/5'
                     }`}>
-                      <div className={`w-8 h-8 rounded-lg ${
-                        meta.priority === 'high'
-                          ? 'bg-gradient-to-br from-blue-400 to-purple-500'
-                          : 'bg-gradient-to-br from-slate-300 to-slate-400'
-                      }`}></div>
+                      <Icon className={`w-8 h-8 ${
+                        meta.priority === 'high' ? 'text-blue-300' : 'text-slate-300'
+                      }`} strokeWidth={1.5} />
                     </div>
 
                     <CardTitle className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
@@ -196,16 +196,25 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <span className="text-blue-300 text-sm font-medium">{t.contact.ceoLabel}</span>
+                    <div className="flex items-center space-x-2">
+                      <User className="w-4 h-4 text-blue-300" />
+                      <span className="text-blue-300 text-sm font-medium">{t.contact.ceoLabel}</span>
+                    </div>
                     <p className="text-white font-semibold">{contactInfo.ceo}</p>
                     <p className="text-slate-300 text-xs">{contactInfo.ceoTitle}</p>
                   </div>
                   <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <span className="text-blue-300 text-sm font-medium">{t.contact.phoneLabel}</span>
+                    <div className="flex items-center space-x-2">
+                      <Phone className="w-4 h-4 text-blue-300" />
+                      <span className="text-blue-300 text-sm font-medium">{t.contact.phoneLabel}</span>
+                    </div>
                     <p className="text-white font-semibold">{contactInfo.phone}</p>
                   </div>
                   <div className="space-y-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <span className="text-blue-300 text-sm font-medium">{t.contact.emailLabel}</span>
+                    <div className="flex items-center space-x-2">
+                      <Mail className="w-4 h-4 text-blue-300" />
+                      <span className="text-blue-300 text-sm font-medium">{t.contact.emailLabel}</span>
+                    </div>
                     <p className="text-white font-semibold text-sm">{contactInfo.email}</p>
                   </div>
                   <a
@@ -215,18 +224,14 @@ export default function Contact() {
                     className="group block space-y-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-400/50 hover:bg-blue-900/10 transition-all duration-200 cursor-pointer"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-blue-300 text-sm font-medium">{t.contact.addressLabel}</span>
+                      <div className="flex items-center space-x-2">
+                        <MapPin className="w-4 h-4 text-blue-300" />
+                        <span className="text-blue-300 text-sm font-medium">{t.contact.addressLabel}</span>
+                      </div>
                       <div className="flex items-center space-x-2">
                         <span className="text-xs text-blue-300 group-hover:text-blue-200 transition-colors">
                           {t.contact.viewMap}
                         </span>
-                        <svg
-                          className="w-4 h-4 text-blue-400 group-hover:text-blue-300 transition-all duration-200 group-hover:scale-110"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
                         <svg
                           className="w-3 h-3 text-blue-400 group-hover:text-blue-300 group-hover:translate-x-1 transition-all duration-200"
                           fill="none"
@@ -342,7 +347,7 @@ export default function Contact() {
             &ldquo;{t.contact.footerQuote}&rdquo;
           </p>
           <p className="text-sm text-blue-300">
-            &copy; 2025 {t.company.name}. All rights reserved.
+            &copy; 2026 {t.company.name}. All rights reserved.
           </p>
         </motion.div>
       </div>

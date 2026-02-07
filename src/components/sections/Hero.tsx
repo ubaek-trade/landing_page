@@ -47,7 +47,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-black mb-8 leading-[0.9] tracking-tight"
+            className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight"
           >
             <span className="text-white">
               {t.hero.headingLine1}
@@ -91,6 +91,7 @@ export default function Hero() {
           >
             <Button
               size="lg"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 text-lg rounded-lg shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-150 hover:scale-105 cursor-pointer"
             >
               {t.hero.ctaPrimary}
@@ -98,6 +99,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => document.getElementById('business')?.scrollIntoView({ behavior: 'smooth' })}
               className="border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg rounded-lg backdrop-blur-sm transition-all duration-150 hover:scale-105 cursor-pointer"
             >
               {t.hero.ctaSecondary}

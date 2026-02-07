@@ -107,10 +107,10 @@ const ko: Translations = {
     logoText: '천',
   },
   hero: {
-    badge: '+10년 전통의 글로벌 수출무역 전문기업',
+    badge: '검증된 글로벌 수출무역 전문기업',
     headingLine1: '대륙간 무역을 선도하는,',
     headingLine2: '천강무역의 글로벌 네트워크',
-    descriptionPrefix: '+10년간 구축한 대륙간 물류 인프라와 대형 제조사 직접 파트너십으로',
+    descriptionPrefix: '다년간 구축한 대륙간 물류 인프라와 대형 제조사 직접 파트너십으로',
     descriptionHighlight1: '50+ 글로벌 브랜드',
     descriptionMid: '와 함께',
     descriptionHighlight2: ' 중공업급 국제무역',
@@ -121,7 +121,7 @@ const ko: Translations = {
   stats: [
     { number: '50+', label: '글로벌 파트너사', description: '세계 주요 제조사 및 브랜드' },
     { number: '25+', label: '수출 대상국', description: '아시아·유럽·아메리카 전역' },
-    { number: '+10년', label: '무역 전문 경력', description: '축적된 국제무역 노하우' },
+    { number: '다년간', label: '무역 전문 경력', description: '축적된 국제무역 노하우' },
     { number: '24/7', label: '글로벌 네트워크', description: '전세계 실시간 무역 지원' },
   ],
   business: {
@@ -129,19 +129,19 @@ const ko: Translations = {
     headingLine1: '중공업급 글로벌 인프라로',
     headingLine2: '대륙간 무역을 선도합니다',
     descriptionPrefix: '대형 제조사 직접 파트너십부터 대률간 물류 네트워크까지,',
-    descriptionHighlight: ' +10년 경력의 종합 수출무역 전문 서비스',
+    descriptionHighlight: ' 다년간 경력의 종합 수출무역 전문 서비스',
     descriptionSuffix: '를 제공합니다',
     learnMore: '자세히 알아보기',
-    ctaHeading: '🌐 글로벌 수출무역에 도전하시나요?',
+    ctaHeading: '글로벌 수출무역에 도전하시나요?',
     ctaDescription: '대형 제조사 직접 파트너십부터 대률간 물류 인프라까지, 천강무역과 함께 역동적 글로벌 비즈니스 성장을 실현하세요',
-    ctaPrimary: '🌍 글로벌 파트너십 문의',
-    ctaSecondary: '📨 수출무역 솔루션 안내',
+    ctaPrimary: '글로벌 파트너십 문의',
+    ctaSecondary: '수출무역 솔루션 안내',
     areas: [
       {
         id: 'manufacturing-export',
         title: '대규모 제조업 수출',
         description: '글로벌 제조사와의 직접 계약을 통한 대량 수출',
-        details: '수십년간 구축된 글로벌 제조업 네트워크를 기반으로 화장품, 전자제품, 생활용품 등의 대규모 수출 프로젝트를 전담하며, 연간 수십억 규모의 국제무역을 성공적으로 수행합니다.',
+        details: '다년간 구축된 글로벌 제조업 네트워크를 기반으로 화장품, 전자제품, 생활용품 등의 대규모 수출 프로젝트를 전담하며, 대규모 국제무역을 성공적으로 수행합니다.',
       },
       {
         id: 'luxury-distribution',
@@ -230,10 +230,10 @@ const en: Translations = {
     logoText: 'CG',
   },
   hero: {
-    badge: '10+ Years of Global Export Trade Expertise',
+    badge: 'Proven Global Export Trade Expertise',
     headingLine1: 'Leading Intercontinental Trade,',
     headingLine2: "Cheon-Gang's Global Network",
-    descriptionPrefix: 'With 10+ years of intercontinental logistics infrastructure and direct manufacturer partnerships,',
+    descriptionPrefix: 'With years of intercontinental logistics infrastructure and direct manufacturer partnerships,',
     descriptionHighlight1: '50+ Global Brands',
     descriptionMid: ' together setting',
     descriptionHighlight2: ' heavy-industry-grade trade',
@@ -244,7 +244,7 @@ const en: Translations = {
   stats: [
     { number: '50+', label: 'Global Partners', description: 'Major manufacturers & brands' },
     { number: '25+', label: 'Export Countries', description: 'Across Asia, Europe & Americas' },
-    { number: '10+', label: 'Years of Expertise', description: 'Accumulated trade know-how' },
+    { number: 'Years', label: 'of Expertise', description: 'Accumulated trade know-how' },
     { number: '24/7', label: 'Global Network', description: 'Real-time worldwide support' },
   ],
   business: {
@@ -252,19 +252,19 @@ const en: Translations = {
     headingLine1: 'With Heavy-Industry-Grade Global Infrastructure,',
     headingLine2: 'Leading Intercontinental Trade',
     descriptionPrefix: 'From direct manufacturer partnerships to intercontinental logistics networks,',
-    descriptionHighlight: ' 10+ years of comprehensive export trade services',
+    descriptionHighlight: ' years of comprehensive export trade services',
     descriptionSuffix: '',
     learnMore: 'Learn More',
-    ctaHeading: '🌐 Ready to Go Global?',
+    ctaHeading: 'Ready to Go Global?',
     ctaDescription: 'From direct manufacturer partnerships to intercontinental logistics infrastructure, achieve dynamic global business growth with Cheon-Gang Trade.',
-    ctaPrimary: '🌍 Global Partnership Inquiry',
-    ctaSecondary: '📨 Export Solutions Guide',
+    ctaPrimary: 'Global Partnership Inquiry',
+    ctaSecondary: 'Export Solutions Guide',
     areas: [
       {
         id: 'manufacturing-export',
         title: 'Large-Scale Manufacturing Export',
         description: 'Mass exports through direct contracts with global manufacturers',
-        details: 'Based on decades of global manufacturing networks, we manage large-scale export projects across cosmetics, electronics, and daily necessities, successfully handling billions in international trade annually.',
+        details: 'Based on years of global manufacturing networks, we manage large-scale export projects across cosmetics, electronics, and daily necessities, successfully handling large-scale international trade.',
       },
       {
         id: 'luxury-distribution',
