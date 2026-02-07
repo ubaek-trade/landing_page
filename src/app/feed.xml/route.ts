@@ -3,14 +3,11 @@ export async function GET() {
   const rfcDate = new Date().toUTCString();
 
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
-    <title>천강무역 - 글로벌 무역의 새로운 기준</title>
-    <link>${baseUrl}</link>
-    <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
-    <description>중공업급 글로벌 수출 인프라를 기반으로 화장품, 패션, 명품, 생활용품 등의 대규모 국제무역을 전담하는 종합 수출무역 전문기업입니다.</description>
-    <language>ko</language>
-    <lastBuildDate>${rfcDate}</lastBuildDate>
+    <title>천강무역</title>
+    <link>${baseUrl}/</link>
+    <description>중공업급 글로벌 수출 인프라를 기반으로 화장품, 패션, 명품, 생활용품 등의 대규모 국제무역을 전담하는 종합 수출무역 전문기업</description>
     <item>
       <title>천강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다</title>
       <link>${baseUrl}/</link>
