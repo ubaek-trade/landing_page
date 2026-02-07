@@ -55,7 +55,7 @@ export default function Business() {
               {t.business.headingLine2}
             </span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+          <p className="text-lg text-slate-600 max-w-4xl mx-auto font-normal leading-relaxed">
             {t.business.descriptionPrefix}
             <span className="text-blue-600 font-semibold">{t.business.descriptionHighlight}</span>{t.business.descriptionSuffix}
           </p>
@@ -79,6 +79,7 @@ export default function Business() {
                   scale: 1.05,
                   transition: { duration: 0.15, ease: "easeOut" }
                 }}
+                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className="h-full cursor-pointer"
               >
                 <Card className="h-full group cursor-pointer border border-slate-200 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-200 bg-white rounded-xl overflow-hidden hover:-translate-y-1">
@@ -130,7 +131,7 @@ export default function Business() {
                 {t.business.ctaHeading}
               </h3>
             </div>
-            <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-lg text-blue-100 mb-6 mx-auto">
               {t.business.ctaDescription}
             </p>
 
@@ -138,6 +139,7 @@ export default function Business() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors cursor-pointer"
               >
                 <Globe className="w-5 h-5 mr-2" />
@@ -146,6 +148,7 @@ export default function Business() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer"
               >
                 <Send className="w-5 h-5 mr-2" />

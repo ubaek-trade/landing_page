@@ -91,7 +91,7 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 text-lg rounded-lg shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-150 hover:scale-105 cursor-pointer"
             >
               {t.hero.ctaPrimary}
@@ -99,7 +99,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => document.getElementById('business')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg rounded-lg backdrop-blur-sm transition-all duration-150 hover:scale-105 cursor-pointer"
             >
               {t.hero.ctaSecondary}

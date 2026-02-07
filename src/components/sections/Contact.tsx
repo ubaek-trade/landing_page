@@ -148,6 +148,7 @@ export default function Contact() {
 
                   <CardContent className="px-6 pb-6">
                     <Button
+                      onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                       className={`w-full font-semibold transition-all duration-200 py-3 rounded-xl cursor-pointer ${
                         meta.priority === 'high'
                           ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40'
@@ -169,6 +170,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
+          id="contact-form"
           className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-white/20 shadow-2xl shadow-black/20"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
