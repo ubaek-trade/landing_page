@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   publisher: '천강무역',
   openGraph: {
     title: '천강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다',
-    description: '30년간 축적된 노하우와 50+ 글로벌 파트너사와 함께하는 종합 수출무역 전문기업',
+    description: '다수의 프로젝트 노하우와 50+ 글로벌 파트너사와 함께하는 종합 수출무역 전문기업',
     url: 'https://cheongangtrade.com',
     siteName: '천강무역',
     images: [
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '천강무역 - 글로벌 무역의 새로운 기준, 세계를 연결하다',
-    description: '30년간 축적된 노하우와 50+ 글로벌 파트너사와 함께하는 종합 수출무역 전문기업',
+    description: '다수의 프로젝트 노하우와 50+ 글로벌 파트너사와 함께하는 종합 수출무역 전문기업',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -56,6 +57,38 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: '천강무역',
+  alternateName: 'Cheon-Gang Global Trade',
+  url: 'https://cheongangtrade.com',
+  description:
+    '중공업급 글로벌 수출 인프라를 기반으로 화장품, 패션, 명품, 생활용품 등의 대규모 국제무역을 전담하는 종합 수출무역 전문기업입니다.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '순화궁로 339',
+    addressLocality: '남양주시',
+    addressRegion: '경기도',
+    addressCountry: 'KR',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+82-10-2537-9643',
+    email: 'changwoohyunkr@naver.com',
+    contactType: 'customer service',
+    availableLanguage: ['Korean', 'English'],
+  },
+  areaServed: ['KR', 'RU', 'MN', 'VN'],
+  knowsAbout: [
+    '국제무역',
+    '수출무역',
+    '글로벌 물류',
+    'K-뷰티 수출',
+    '라이브커머스',
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -64,6 +97,10 @@ export default function RootLayout({
   return (
     <html lang="ko" className={inter.variable}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#1e40af" />
@@ -76,7 +113,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-inter antialiased`}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
