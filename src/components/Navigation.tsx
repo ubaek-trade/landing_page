@@ -3,15 +3,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { companyInfo } from '@/data/company';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: '홈', href: '#home' },
-    { name: '사업영역', href: '#business' },
-    { name: '연락처', href: '#contact' }
+    { name: t.nav.home, href: '#home' },
+    { name: t.nav.business, href: '#business' },
+    { name: t.nav.contact, href: '#contact' }
   ];
 
   const toggleMobileMenu = () => {
@@ -26,10 +27,10 @@ export default function Navigation() {
     // Remove the # from href to get the target id
     const targetId = href.replace('#', '');
     const targetElement = document.getElementById(targetId);
-    
+
     // Close mobile menu first
     closeMobileMenu();
-    
+
     if (targetElement) {
       // Wait for mobile menu animation to complete
       setTimeout(() => {
@@ -45,7 +46,7 @@ export default function Navigation() {
             top: offsetPosition,
             behavior: 'smooth'
           });
-          
+
           // Method 2: Fallback for mobile browsers
           setTimeout(() => {
             const newPosition = targetElement.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - navHeight;
@@ -56,7 +57,7 @@ export default function Navigation() {
               });
             }
           }, 100);
-          
+
         } catch {
           // Method 3: Basic fallback
           window.scrollTo(0, offsetPosition);
@@ -66,7 +67,7 @@ export default function Navigation() {
   };
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -77,11 +78,11 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">천</span>
+              <span className="text-white font-bold text-lg">{t.nav.logoText}</span>
             </div>
             <div>
-              <h1 className="text-lg font-bold text-slate-900">{companyInfo.name}</h1>
-              <p className="text-xs text-slate-500">{companyInfo.englishName}</p>
+              <h1 className="text-lg font-bold text-slate-900">{t.company.name}</h1>
+              <p className="text-xs text-slate-500">{t.company.englishName}</p>
             </div>
           </div>
 
@@ -89,7 +90,7 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
-                key={item.name}
+                key={item.href}
                 onClick={() => handleNavClick(item.href)}
                 className="text-slate-600 hover:text-blue-600 font-medium transition-all duration-200 cursor-pointer hover:scale-105 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:transition-all after:duration-200 hover:after:w-full"
               >
@@ -98,28 +99,76 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button 
+          {/* Language Toggle + CTA Button */}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Language Toggle */}
+            <div className="flex items-center bg-slate-100 rounded-full p-0.5">
+              <button
+                onClick={() => setLanguage('ko')}
+                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  language === 'ko'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-500 hover:text-slate-700'
+                }`}
+              >
+                KO
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  language === 'en'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-500 hover:text-slate-700'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
+            <Button
               size="sm"
               onClick={() => handleNavClick('#contact')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
             >
-              문의하기
+              {t.nav.cta}
             </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button 
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Mobile Language Toggle */}
+            <div className="flex items-center bg-slate-100 rounded-full p-0.5">
+              <button
+                onClick={() => setLanguage('ko')}
+                className={`px-2 py-1 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  language === 'ko'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-500'
+                }`}
+              >
+                KO
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-2 py-1 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  language === 'en'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-500'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
+            <button
               onClick={toggleMobileMenu}
               className="text-slate-600 hover:text-slate-900 p-2 cursor-pointer transition-all duration-200 hover:scale-110 hover:bg-slate-100 rounded-lg"
-              aria-label="메뉴 열기"
+              aria-label={t.nav.menuAriaLabel}
             >
-              <svg 
-                className={`w-6 h-6 transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-45' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className={`w-6 h-6 transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-45' : ''}`}
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 {isMobileMenuOpen ? (
@@ -145,7 +194,7 @@ export default function Navigation() {
               <div className="px-4 py-6 space-y-4">
                 {navItems.map((item, index) => (
                   <motion.button
-                    key={item.name}
+                    key={item.href}
                     onClick={() => handleNavClick(item.href)}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -156,18 +205,18 @@ export default function Navigation() {
                     {item.name}
                   </motion.button>
                 ))}
-                
+
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.1 }}
                   className="pt-4 border-t border-slate-200"
                 >
-                  <Button 
+                  <Button
                     onClick={() => handleNavClick('#contact')}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
                   >
-                    문의하기
+                    {t.nav.cta}
                   </Button>
                 </motion.div>
               </div>

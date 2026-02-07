@@ -1,22 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
-const brandNames = [
-  '디올', '샤넬', '그린셀렙', '이자녹스', '셀트리온', '메디필', '메디힐', '제이준',
-  '빌리프', '아누아', '성분에디터', '조선미녀', '차앤박', '사임당', '스킨1004', '비비안'
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function BrandStrip({ className = "" }: { className?: string }) {
+  const { t } = useLanguage();
+
   return (
     <section className={`py-12 bg-white border-y border-slate-200 ${className}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-6">
           <p className="text-xs text-slate-400 font-medium tracking-wider uppercase">
-            TRUSTED BY PREMIUM BRANDS
+            {t.brandStrip.heading}
           </p>
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -39,7 +37,7 @@ export default function BrandStrip({ className = "" }: { className?: string }) {
             className="flex items-center space-x-16 whitespace-nowrap"
             style={{ width: 'max-content' }}
           >
-            {[...brandNames, ...brandNames, ...brandNames].map((brand, index) => (
+            {[...t.brandStrip.brands, ...t.brandStrip.brands, ...t.brandStrip.brands].map((brand, index) => (
               <div
                 key={`${brand}-${index}`}
                 className="flex-shrink-0 text-slate-400 font-medium text-base tracking-wide hover:text-blue-600 transition-colors duration-300"
